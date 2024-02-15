@@ -1,22 +1,22 @@
-import { VariantType, useSnackbar } from 'notistack';
+import { VariantType, useSnackbar } from 'notistack'
 
 /**
  * トースト取得
  */
 export const useToast = () => {
-  const { enqueueSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar()
 
   // 成功トースト
   const successToast = (message: string): void => {
     const variant: VariantType = 'success'
     enqueueSnackbar(message, { variant })
-  };
+  }
 
   // エラートースト
   const errorToast = (message: string) => () => {
     const variant: VariantType = 'error'
-    enqueueSnackbar(message, { variant });
-  };
+    enqueueSnackbar(message, { variant })
+  }
 
   return {
     successToast,

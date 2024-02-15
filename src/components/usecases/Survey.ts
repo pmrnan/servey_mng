@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import useSWRMutation from "swr/mutation";
+import useSWRMutation from "swr/mutation"
 import { getServeyList, postServey } from '@/components/repositories/Servey'
 import { Servey } from '@/type/ServeyType'
 

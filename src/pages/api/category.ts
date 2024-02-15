@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Category[] | Er
     switch (req.method) {
         case 'GET':
             // CSVファイルを読み込む
-            const getResult: Category[] = readCsv(filePath);
+            const getResult: Category[] = readCsv(filePath)
             return res.status(200).json(getResult)
         default:
             return res.status(500).json({ name: 'error', message: 'リクエスト形式が正しくありません' })
