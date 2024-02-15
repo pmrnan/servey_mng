@@ -31,16 +31,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Servey[] | Erro
             })
 
             // 新規データを追加
-            postNewData.push(req.body);
+            postNewData.push(req.body)
 
             // オブジェクトのプロパティを先頭行に記述し，csvデータに変換
-            const postWriteData = stringify(postNewData, { header: true });
+            const postWriteData = stringify(postNewData, { header: true })
 
             // CSVファイルへ書き込み
             writeCsv(filePath, postWriteData)
 
             // データ追加後のCSVファイルを読み込む
-            const postResult: Servey[] = readCsv(filePath);
+            const postResult: Servey[] = readCsv(filePath)
             return res.status(200).json(postResult)
         default:
             return res.status(500).json({ name: 'error', message: 'リクエスト形式が正しくありません。' })

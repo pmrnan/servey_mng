@@ -65,6 +65,7 @@ export const ShareMsgDialog = ({
                 multiline
                 style={{ backgroundColor: '#fff' }}
                 fullWidth
+                sx={{ wordBreak: 'break-all' }}
               />
 
               {/* コピーボタン */}

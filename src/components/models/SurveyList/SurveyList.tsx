@@ -50,14 +50,16 @@ export const SurveyList = () => {
             >
               {/* 「All」タブを表示 */}
               <Tab
+                key="all"
                 value="all"
                 label={'All(' + serveyData?.length + ')'}
                 sx={{ color: Colors.APP_ORANGE }}
               />
               {/* 全カテゴリー分のタブを表示 */}
-              {categoryData?.map((cd) => {
+              {categoryData?.map((cd, index) => {
                 return (
                   <Tab
+                    key={index}
                     value={cd.id}
                     label={
                       cd.categoryName +
@@ -72,6 +74,7 @@ export const SurveyList = () => {
             </TabList>
             {/* 「All」タブの中身 */}
             <TabPanel
+              key="all"
               value="all"
               children={
                 <AppGrid
@@ -89,13 +92,15 @@ export const SurveyList = () => {
               }
             />
             {/* 全カテゴリー分のタブの中身 */}
-            {categoryData?.map((cd) => {
+            {categoryData?.map((cd, index) => {
               return (
                 <>
                   <TabPanel
+                    key={index}
                     value={cd.id}
                     children={
                       <AppGrid
+                        key={index}
                         height="65vh"
                         columns={columns}
                         rows={serveyData?.filter((sd) => cd.id === sd.categoryId) || []}

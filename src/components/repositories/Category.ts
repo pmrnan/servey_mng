@@ -7,7 +7,7 @@ const BASE_URL = 'api'
 export const getCategory = async () => {
     const url = `${BASE_URL}/category`
 
-    const res = await fetch(url);
+    const res = await fetch(url)
 
     // ステータスコードが200でない場合
     if (res.status !== 200) {
@@ -15,5 +15,5 @@ export const getCategory = async () => {
         throw new Error(error.message)
     }
 
-    return res.json();
+    return res.json()
 }

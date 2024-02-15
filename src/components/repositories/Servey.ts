@@ -6,7 +6,7 @@ const BASE_URL = 'api'
  */
 export const getServeyList = async () => {
     const url = `${BASE_URL}/servey`
-    const res = await fetch(url);
+    const res = await fetch(url)
 
     // ステータスコードが200でない場合
     if (res.status !== 200) {
@@ -14,7 +14,7 @@ export const getServeyList = async () => {
         throw new Error(error.message)
     }
 
-    return res.json();
+    return res.json()
 }
 
 /**
@@ -34,7 +34,7 @@ export const postServey = async (key: string, { arg }: { arg: any }) => {
         },
         body: JSON.stringify(arg)
     }
-    const res = await fetch(url, req);
+    const res = await fetch(url, req)
 
     // ステータスコードが200でない場合
     if (res.status !== 200) {
@@ -42,5 +42,5 @@ export const postServey = async (key: string, { arg }: { arg: any }) => {
         throw new Error(error.message)
     }
 
-    return res.json();
+    return res.json()
 }
